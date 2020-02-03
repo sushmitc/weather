@@ -12,6 +12,7 @@ const app = express() // express plug-in
 const publicDirectory = path.join(__dirname,'../public') 
 const viewPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
+const port = process.env.PORT || 3000
 
 app.set('view engine' , 'hbs') // incorporate hbs 
 app.set('views' , viewPath)//define path for view
@@ -88,6 +89,6 @@ app.get('/help' , (req , res) => {
     })
  })
 
-app.listen(3000 , () => {
+app.listen(port , () => {
     console.log('server is up and running')
 })
